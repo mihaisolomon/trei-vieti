@@ -25,7 +25,7 @@ class Register extends React.Component {
         AuthService.register(data)
             .then(user => {
                 this.props.dispatch(loginUserSuccess(user));
-                window.location = "/profile";
+                this.props.history.push('/profile');
             })
             .catch(err => {
                 alert('Aoleu! Smallpox everywhere!');

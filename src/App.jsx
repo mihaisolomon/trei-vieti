@@ -59,8 +59,8 @@ class App extends React.Component {
                                 isLogged={store.getState().user}
                                 toggleShowNotifications={()=> this.toggleShowNotifications() }/>
                             <Switch>
-                                <Route exact path="/" component={AuthPage} />
                                 <Route path="/profile" component={ProfilePage} />
+                                <Route path="/" component={AuthPage} />
                             </Switch>
                         </div>
                         {this.state.showNotifications &&
