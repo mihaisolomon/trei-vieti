@@ -121,6 +121,7 @@
 			text-decoration: none;
 			background: none;
 			cursor: pointer;
+			outline: none;
 			border: none;
 			float: right;
 			color: #000;
@@ -143,6 +144,18 @@
 					position: relative;
 					font-size: 16px;
 					top: 2px;
+				}
+			}
+
+			&.register{
+				display: inline-block;
+				text-align: center;
+				margin-top: 15px;
+				width: 100%;
+				float: left;
+
+				&:hover{
+					color: #F5333F;
 				}
 			}
 		}

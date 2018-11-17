@@ -51,6 +51,7 @@ class Login extends React.Component {
                                 Ai uitat parola?
                             </button>
                             <button type="submit">Login</button>
+                            <button type="button" className="register">Nu ai cont? Înregistrează-te, <br/> durează foarte puțin.</button>
                         </form>
                     </div>
                 )}
