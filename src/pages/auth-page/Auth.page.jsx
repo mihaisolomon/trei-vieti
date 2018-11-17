@@ -16,8 +16,8 @@ class AuthPage extends React.Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" component={Login} />
-                <Route exact path="/register" component={Register} />
+                <Route exact path="/auth/" component={Login} />
+                <Route exact path="/auth/register" component={Register} />
             </Switch>
         )
     }
