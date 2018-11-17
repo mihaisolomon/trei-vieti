@@ -1,8 +1,25 @@
 import React from 'react';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import MaterialIcon, {colorPalette} from 'material-icons-react';
+
+import Login from './components/Login.component';
+import Register from './components/Register.component';
+
+import './Auth.style.scss';
 
 class AuthPage extends React.Component {
+    constructor(props){
+        super(props);
+        this.showForgotPassword = false;
+    }
+
     render() {
-        return <p> auth page </p>;
+        return (
+            <Switch>
+                <Route exact path="/" component={Login} />
+                <Route exact path="/register" component={Register} />
+            </Switch>
+        )
     }
 }
 
