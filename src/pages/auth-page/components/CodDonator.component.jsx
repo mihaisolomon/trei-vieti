@@ -1,14 +1,19 @@
 import React from 'react';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import ForgotPass from './ForgotPass.component';
+import AuthService from '../../../services/Auth.service';
+import { connect } from 'react-redux';
+import { loginUserSuccess } from '../../../redux/user/user.actions';
 
-class Login extends React.Component {
+class CodDonator extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             showForgotPass: false
         };
+
+        this.login = this.login.bind(this);
     }
 
     toggle() {
@@ -19,6 +24,18 @@ class Login extends React.Component {
 
     login(event) {
         event.preventDefault();
+
+        AuthService.login({
+            email: "pbarsham0@ezinearticles.com",
+            password: "asdqwe123"
+        }).then(user => {
+            localStorage.setItem("authToken", user.token);
+
+				AuthService.getUser().then(user => {
+					this.props.dispatch(loginUserSuccess(user));
+					this.props.history.push('/profile');
+				})
+        })
     }
 
     render() {
@@ -48,4 +65,8 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+function mapStateToProps() {
+
+}
+
+export default connect(mapStateToProps)(CodDonator);

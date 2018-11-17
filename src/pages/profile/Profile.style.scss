@@ -34,15 +34,17 @@
 	background: #fff;
 	padding: 25px;
 	border:1px solid #F5333F;
+	color: #F5333F;
 	width:calc(100% - 50px);
 
-	h3{
+	h2, h3{
 		display: inline-block;
 		text-align: center;
 		font-size: 1.5em;
 		color: #F5333F;
 		width: 100%;
 		margin: 0;
+		top: 0 !important;
 	}
 }
 .user-avatar {

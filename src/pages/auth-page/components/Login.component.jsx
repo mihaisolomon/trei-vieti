@@ -1,6 +1,7 @@
 import React from 'react';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import ForgotPass from './ForgotPass.component';
 
 import AuthService from '../../../services/Auth.service';
@@ -77,7 +78,7 @@ class Login extends React.Component {
                                 Ai uitat parola?
                             </button>
                             <button type="submit">Login</button>
-                            <button type="button" className="register">Nu ai cont? Înregistrează-te, <br/> durează foarte puțin.</button>
+                            <Link to="/register" className="register">Nu ai cont? Înregistrează-te, <br/> durează foarte puțin.</Link>
                         </form>
                     </div>
                 )}
