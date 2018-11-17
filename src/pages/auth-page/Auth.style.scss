@@ -146,6 +146,18 @@
 					top: 2px;
 				}
 			}
+
+			&.register{
+				display: inline-block;
+				text-align: center;
+				margin-top: 15px;
+				width: 100%;
+				float: left;
+
+				&:hover{
+					color: #F5333F;
+				}
+			}
 		}
 
 		button[type="submit"]{
