@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Header from './components/header/Header.component';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Header appName = {"Trei Vieti #2"}/>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Bla bla <code>src/App.js</code> and save to reload.
           </p>
           <a
             className="App-link"
