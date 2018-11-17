@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="container">
-          <Header appName = {"Trei Vieti #2"} />
+          <Header />
           <Auth />
         </div>
       </div>

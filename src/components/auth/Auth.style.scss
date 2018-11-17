@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 
 .auth-box{
 	display: inline-block;
-	background: #fff;
-	padding: 25px;
 	width: calc(100% - 50px);
+	text-align: center;
+	background: #fff;
+	max-width: 460px;
+	padding: 50px;
+
+
+	-webkit-box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
+	-moz-box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
+	box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
 
 	h2{
 		display: inline-block;
@@ -14,5 +20,88 @@
 
 		width: 100%;
 		margin: 0;
+	}
+
+	> p{
+		display: inline-block;
+		font-size: 21px;
+		max-width: 500px;
+		padding: 0 25px;
+	}
+
+	form{
+		display: inline-block;
+		margin-top: 50px;
+		max-width: 420px;
+		width: 100%;
+
+		label{
+			display: inline-block;
+			margin-bottom: 15px;
+			width: 100%;
+			float: left;
+
+			input{
+				display: inline-block;
+				padding: 15px 0;
+				font-size: 16px;
+				outline: none;
+				border: none;
+				width: 100%;
+
+				border-bottom: 1px solid #ddd;
+			}
+
+			&.has-error{
+				input, select{
+					border-color: red;
+				}
+
+				span.error{
+					display: inline-block;
+					text-align: left;
+					margin-top: 5px;
+					width: 100%;
+					color: red;
+
+					&:before{
+						font-family: Material Icons;
+						text-decoration: inherit;
+						font-weight: 400;
+						font-style: normal;
+						content: "info";
+						
+						display: inline-block;
+						position: absolute;
+						text-align: center;
+						font-size: 16px;
+						left: 0;
+						top: -1px;
+					}
+				}
+			}
+		}
+
+		button[type="submit"]{
+			font-family: 'Poppins', sans-serif;
+			transition: all 0.5s ease;
+			display: inline-block;
+			background: #F5333F;
+			cursor: pointer;
+			outline: none;
+			padding: 15px;
+			border: none;
+			width: 100%;
+
+			text-transform: uppercase;
+			font-weight: bold;
+			margin-top: 25px;
+			font-size: 21px;
+			color: #fff;
+
+			&:hover{
+				background: darken(#F5333F, 10%);
+			}
+		}
 	}
 }
