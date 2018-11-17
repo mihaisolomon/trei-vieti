@@ -4,6 +4,7 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 
 import Login from './components/Login.component';
 import Register from './components/Register.component';
+import CodDonator from './components/CodDonator.component';
 
 import './Auth.style.scss';
 
@@ -18,6 +19,7 @@ class AuthPage extends React.Component {
             <Switch>
                 <Route exact path="/auth/" component={Login} />
                 <Route exact path="/auth/register" component={Register} />
+                <Route exact path="/auth/cod-donator" component={CodDonator} />
             </Switch>
         )
     }
