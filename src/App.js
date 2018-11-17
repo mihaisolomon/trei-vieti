@@ -3,8 +3,9 @@ import './App.scss';
 
 import Header from './components/header/Header.component';
 import BloodRectangle from './components/BloodRectangle/BloodRectangle.component'
-import './App.css';
 import Auth from './components/auth/Auth.component';
+
+import OfflineAlert from './components/offline-alert/OfflineAlert.component';
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,6 @@ class App extends React.Component {
         <BloodRectangle bloodType="A" percentage="22" />
         <BloodRectangle bloodType="B" percentage="55" />
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
             Bla bla <code>src/App.js</code> and save to reload.
           </p>
@@ -31,6 +31,7 @@ class App extends React.Component {
           <Header appName = {"Trei Vieti #2"} />
           <Auth />
         </div>
+        <OfflineAlert></OfflineAlert>
       </div>
     );
   }
