@@ -11,7 +11,7 @@ class Auth extends React.Component {
                 <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 
                 <form action="">
-                    <label class="has-error">
+                    <label className="has-error">
                         <input type="text" placeholder="Adresa de email" />
                         <span className="error">Acest câmp este obligatoriu.</span>
                     </label>
