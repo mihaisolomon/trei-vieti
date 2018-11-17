@@ -5,14 +5,22 @@
 	text-align:center;
 
 }
+.user-container{
+	h2{
+		font-size: 35px;
+		color: #fff;
+		position: relative;
+		top: -35px;
+	}
+}
 .full-profile{
 	display: inline-block;
+	width: calc(100% - 100px);
 	background: #F5333F;
-	padding: 25px;
-	width:calc(100% - 100px);
 	margin-top: 30px;
+	padding: 25px;
 
-	h2{
+	h3{
 		display: inline-block;
 		text-align: center;
 		font-size: 1.5em;
@@ -26,9 +34,9 @@
 	background: #fff;
 	padding: 25px;
 	border:1px solid #F5333F;
-	width:calc(100% - 100px);
+	width:calc(100% - 50px);
 
-	h2{
+	h3{
 		display: inline-block;
 		text-align: center;
 		font-size: 1.5em;
@@ -40,11 +48,10 @@
 .user-avatar {
 	width:150px;
 	height:150px;
-	border:1px solid grey;
 	border-radius:50%;
-	-webkit-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
-	-moz-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
-	box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
+	-webkit-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.12);
+	-moz-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.12);
+	box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.12);
 }
 .user h1 {
 	color: #F5333F;
@@ -54,12 +61,14 @@
 .user p {
 	margin-bottom:50px;
 }
+
 .user-section {
-	
 	padding-bottom:30px;
+	background: #fff;
 	max-width:800px;
 	margin:0 auto;
 }
+
 .user-section-wrapper {
 	background-color:#f0f0f0;
 }
@@ -73,6 +82,9 @@
 .user-stats {
 	display: inline-block;
 	width:33.33%;
+	b{
+		font-size: 25px;
+	}
 	p {
 		color:grey;
 		margin:0;
@@ -88,6 +100,7 @@
 		color:grey;
 	}
 	p {
+		color: #000;
 		margin:0;
 	}
 	vertical-align:center;

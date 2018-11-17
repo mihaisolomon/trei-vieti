@@ -7,6 +7,7 @@ class ProfilePage extends React.Component {
     render() {
         return (
             <div className="user-container">
+                <h2>Resurse actuale</h2>
                 <section className="user-section-wrapper">
                     <div className="user-section">
                         <div className="rectangle-wrapper">
@@ -24,19 +25,21 @@ class ProfilePage extends React.Component {
                             <h1>Alexandru Pavaloi</h1>
                             <p>Level: Hardcore donor</p>
                         </div>
+
                         <div className="user-stats-container">
                             <div className="user-stats">
-                                300 <p>puncte</p>
+                                <b>300</b> <p>puncte</p>
                             </div>
                             <div className="user-stats">
-                                3 <p>donari</p>
+                                <b>2</b> <p>donari</p>
                             </div>
                             <div className="user-stats">
-                                9 <p>vieti salvate</p>
+                                <b>9</b> <p>vieti salvate</p>
                             </div>
                         </div>
+
                         <div className="full-profile">
-                            <h2>FULL PROFILE</h2>
+                            <h3>FULL PROFILE</h3>
                         </div>
                     </div>
                 </section>
@@ -64,7 +67,7 @@ class ProfilePage extends React.Component {
                         <p>pana poti dona din nou. Succes!</p>
                     </div>
                     <div className="log-out">
-                        <h2>LOG OUT</h2>
+                        <h3>LOG OUT</h3>
                     </div>
                 </section>
             </div>
