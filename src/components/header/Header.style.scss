@@ -1,0 +1,60 @@
+.header{
+	display: inline-block;
+	margin-bottom: 50px;
+	text-align: center;
+	padding-top: 50px;
+	width: 100%;
+
+	@media only screen and (max-width: 780px) {
+		padding-top: 25px;
+	}
+
+	.container{ text-align: center; max-width: 870px; }
+
+	a.logo{
+		display: inline-block;
+
+		img{
+			display: inline-block;
+			float: left;
+		}
+
+		@media only screen and (max-width: 780px) {
+			max-width: 65%;
+
+			img{
+				width: 100%
+			}
+		}
+	}
+
+	a.go_back{
+		display: inline-block;
+		float: left;
+
+		i{
+			font-size: 45px;
+			color: #fff;
+
+			@media only screen and (max-width: 780px) {
+				font-size: 25px;
+			}
+		}
+	}
+
+	a.notifications{
+		display: inline-block;
+		float: right;
+		color: #fff;
+
+		i{
+			font-size: 45px;
+			color: #fff;
+
+			@media only screen and (max-width: 780px) {
+				font-size: 25px;
+			}
+		}
+	}
+
+}

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import './App.scss';
+
 import Header from './components/header/Header.component';
 import BloodRectangle from './components/BloodRectangle/BloodRectangle.component'
 import './App.css';
+import Auth from './components/auth/Auth.component';
 
 class App extends React.Component {
   render() {
@@ -25,6 +27,10 @@ class App extends React.Component {
             Learn React
           </a>
         </header>
+        <div className="container">
+          <Header appName = {"Trei Vieti #2"} />
+          <Auth />
+        </div>
       </div>
     );
   }
