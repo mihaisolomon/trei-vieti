@@ -3,6 +3,7 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 
 import './Header.style.scss';
 
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
