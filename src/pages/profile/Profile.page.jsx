@@ -17,6 +17,7 @@ class ProfilePage extends React.Component {
         return (
             <OnlyAuth>
                 <div className="user-container">
+                    <h2>Resurse actuale</h2>
                     <section className="user-section-wrapper">
                         <div className="user-section">
                             <div className="rectangle-wrapper">
@@ -36,17 +37,17 @@ class ProfilePage extends React.Component {
                             </div>
                             <div className="user-stats-container">
                                 <div className="user-stats">
-                                    300 <p>puncte</p>
+                                    <b>300</b> <p>puncte</p>
                                 </div>
                                 <div className="user-stats">
-                                    3 <p>donari</p>
+                                    <b>3</b> <p>donari</p>
                                 </div>
                                 <div className="user-stats">
-                                    9 <p>vieti salvate</p>
+                                    <b>9</b> <p>vieti salvate</p>
                                 </div>
                             </div>
                             <div className="full-profile">
-                                <h2>FULL PROFILE</h2>
+                                <h3>FULL PROFILE</h3>
                             </div>
                         </div>
                     </section>
@@ -55,30 +56,30 @@ class ProfilePage extends React.Component {
                         <div className="time">
                             <p>Au mai ramas</p>
 
+
                             <ul>
                                 <li>
-                                    <span id="days" />
-                                    days
+                                    <span id="days">1</span>
+                                    Zile
                                 </li>
                                 <li>
-                                    <span id="hours" />
-                                    Hours
+                                    <span id="hours">12</span>
+                                    Ore
                                 </li>
                                 <li>
-                                    <span id="minutes" />
-                                    Minutes
+                                    <span id="minutes">36</span>
+                                    Minute
                                 </li>
                                 <li>
-                                    <span id="seconds" />
-                                    Seconds
+                                    <span id="seconds">10</span>
+                                    Secunde
                                 </li>
                             </ul>
 
-                            <p>12 : 06 : 55</p>
                             <p>pana poti dona din nou. Succes!</p>
                         </div>
                         <button onClick={this.logout} className="log-out">
-                            <h2>LOG OUT</h2>
+                            <h3>LOG OUT</h3>
                         </button>
                     </section>
                 </div>
