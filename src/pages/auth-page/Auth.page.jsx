@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import {Switch, Route} from 'react-router-dom';
 
 import Login from './components/Login.component';
 import Register from './components/Register.component';
@@ -16,8 +15,8 @@ class AuthPage extends React.Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/auth/" component={Login} />
-                <Route exact path="/auth/register" component={Register} />
+                <Route exact path="/" component={Login} />
+                <Route exact path="/register" component={Register} />
             </Switch>
         )
     }

@@ -10,7 +10,7 @@ function user(state = DEFAULT_USER_STATE, {
 }) {
     switch (type) {
         case USER_ACTIONS.LOGIN_USER_SUCCESS:
-            return payload;
+            return Object.assign({}, payload, {isLogged: true});
         case USER_ACTIONS.LOGOUT_USER_SUCCESS:
             return {};
         default:

@@ -4,13 +4,12 @@ import { Redirect } from 'react-router-dom';
 
 const OnlyAuth = props => {
     const { isPingDone, isLogged } = props;
-
     if (!isPingDone) {
         return <div />;
     }
 
     if (!isLogged) {
-        return <Redirect to={`/auth/login`} />;
+        return <Redirect to={`/`} />;
     }
 
     return <React.Fragment>{props.children}</React.Fragment>;
@@ -19,7 +18,7 @@ const OnlyAuth = props => {
 function mapStateToProps(state) {
     return {
         isPingDone: state.user,
-        isLogged: state.user && state.user.username
+        isLogged: state.user && state.user.isLogged
     };
 }
 

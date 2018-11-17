@@ -1,7 +1,9 @@
 import React from 'react';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
+import { connect } from 'react-redux';
 
 import AuthService from '../../../services/Auth.service';
+import { loginUserSuccess } from '../../../redux/user/user.actions';
 
 class Register extends React.Component {
     constructor(props) {
@@ -22,7 +24,8 @@ class Register extends React.Component {
 
         AuthService.register(data)
             .then(user => {
-                //
+                this.props.dispatch(loginUserSuccess(user));
+                window.location = "/profile";
             })
             .catch(err => {
                 alert('Aoleu! Smallpox everywhere!');
@@ -36,21 +39,21 @@ class Register extends React.Component {
                 <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 
                 <form ref={this.formRef} onSubmit={this.register}>
-                    <label class="has-error">
+                    <label className="has-error">
                         <input required type="text" placeholder="Nume" name="name" />
                         <span className="error">
                             <MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.
                         </span>
                     </label>
 
-                    <label class="has-error">
+                    <label className="has-error">
                         <input required type="email" placeholder="Adresa de email" name="email" />
                         <span className="error">
                             <MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.
                         </span>
                     </label>
 
-                    <label class="has-error">
+                    <label className="has-error">
                         <input required type="password" placeholder="Parola" name="password" />
                         <span className="error">
                             <MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.
@@ -59,7 +62,7 @@ class Register extends React.Component {
 
                     <label className="checkbox">
                         <input type="checkbox" placeholder="Parola" />
-                        <p>Păstrează-ma logat</p>
+                        <p>Sunt de acord cu termenii și condițiile!</p>
                     </label>
 
                     <button type="submit">Următor</button>
@@ -69,4 +72,10 @@ class Register extends React.Component {
     }
 }
 
-export default Register;
+function mapStateToProps() {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps)(Register);

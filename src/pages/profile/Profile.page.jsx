@@ -4,6 +4,15 @@ import './Profile.style.scss';
 import OnlyAuth from '../../components/OnlyAuth';
 
 class ProfilePage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    logout() {
+        localStorage.removeItem("authToken");
+        window.location = "/";
+    }
+
     render() {
         return (
             <OnlyAuth>
@@ -68,9 +77,9 @@ class ProfilePage extends React.Component {
                             <p>12 : 06 : 55</p>
                             <p>pana poti dona din nou. Succes!</p>
                         </div>
-                        <div className="log-out">
+                        <button onClick={this.logout} className="log-out">
                             <h2>LOG OUT</h2>
-                        </div>
+                        </button>
                     </section>
                 </div>
             </OnlyAuth>

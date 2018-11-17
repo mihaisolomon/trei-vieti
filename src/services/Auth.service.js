@@ -4,8 +4,12 @@ import AppConstants from "../App.constants";
 class AuthService {
 
     ping() {
-        return Promise.resolve(null);
+        return fetch(`${AppConstants.ENDPOINT}/user/ping`).then(resp => resp.json());
         // return HttpService.get(`${AppConstants.ENDPOINT}/user/ping`).then(resp => resp.json());
+    }
+
+    getUser() {
+        return HttpService.get(`${AppConstants.ENDPOINT}/users`).then(resp => resp.json());
     }
 
     login({
@@ -23,12 +27,12 @@ class AuthService {
     }
 
     register({
-        username,
+        name,
         email,
         password
     }) {
         return HttpService.post(`${AppConstants.ENDPOINT}/user/register`, {
-            username,
+            name,
             email,
             password
         }).then(resp => resp.json());

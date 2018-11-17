@@ -32,8 +32,7 @@ function httpGeneric(url, options = {}) {
             headers: new Headers({
                 "content-type": "application/json",
                 "Authorization": `Bearer ${localStorage.getItem("authToken")}`
-            }),
-            credentials: "include",
+            })
         }, options)).then(resp => {
             if (resp.ok) {
                 return resp;
@@ -42,13 +41,7 @@ function httpGeneric(url, options = {}) {
                     throw jsonResp;
                 });
             }
-        })
-        .catch(err => {
-            if (!err.status || err.status === 500) {
-                alert("Server error");
-            }
-            throw err;
-        })
+        });
 }
 
 export default new Http();

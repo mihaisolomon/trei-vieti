@@ -1,6 +1,10 @@
 import React from 'react';
 import MaterialIcon, {colorPalette} from 'material-icons-react';
+import { connect } from 'react-redux';
 import ForgotPass from './ForgotPass.component';
+
+import AuthService from '../../../services/Auth.service';
+import { loginUserSuccess } from '../../../redux/user/user.actions';
 
 class Login extends React.Component {
     constructor(props) {
@@ -9,6 +13,9 @@ class Login extends React.Component {
         this.state = {
             showForgotPass: false
         };
+
+        this.formRef = React.createRef();
+        this.login = this.login.bind(this);
     }
 
     toggle() {
@@ -19,6 +26,25 @@ class Login extends React.Component {
 
     login(event) {
         event.preventDefault();
+
+        const data = {
+            email: this.formRef.current.email.value,
+            password: this.formRef.current.password.value
+        };
+
+        AuthService.login(data)
+            .then(user => {
+				localStorage.setItem("authToken", user.token);
+
+				AuthService.getUser().then(user => {
+					this.props.dispatch(loginUserSuccess(user));
+					this.props.history.push('/profile');
+				})
+
+			})
+            .catch(err => {
+                alert('Login fail!');
+            });
     }
 
     render() {
@@ -29,16 +55,16 @@ class Login extends React.Component {
                         <h2>Autentificare</h2>
                         <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 
-                        <form onSubmit={this.login}>
+                        <form onSubmit={this.login} ref={this.formRef}>
                             <label className="has-error">
-                                <input type="text" placeholder="Adresa de email" />
+                                <input required name="email" type="email" placeholder="Adresa de email" />
                                 <span className="error">
                                     <MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.
                                 </span>
                             </label>
 
                             <label>
-                                <input type="password" placeholder="Parola" />
+                                <input required name="password" type="password" placeholder="Parola" />
                                 <span className="error" />
                             </label>
 
@@ -61,4 +87,8 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+function mapStateToProps() {
+	return {}
+}
+
+export default connect(mapStateToProps)(Login);

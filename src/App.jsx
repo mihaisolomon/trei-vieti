@@ -33,7 +33,13 @@ class App extends React.Component {
 
     componentDidMount() {
         if (!store.getState().user) {
-            AuthService.ping().then(user => store.dispatch(loginUserSuccess(user)));
+            AuthService.ping().then(user => {
+                store.dispatch(loginUserSuccess(user));
+            }).catch(err => {
+                store.dispatch(loginUserSuccess({
+                    isLogged: false
+                }));
+            })
         }
     }
 
@@ -45,8 +51,8 @@ class App extends React.Component {
                         <div className="container">
                             <Header />
                             <Switch>
-                                <Route path="/" component={AuthPage} />
-                                <Route exact path="/profile" component={ProfilePage} />
+                                <Route exact path="/" component={AuthPage} />
+                                <Route path="/profile" component={ProfilePage} />
                             </Switch>
                         </div>
                     </div>
