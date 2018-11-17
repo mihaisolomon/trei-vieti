@@ -6,12 +6,62 @@ import OnlyAuth from '../../components/OnlyAuth';
 class ProfilePage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            remainingDays: 0,
+          remainingHours: 0,
+          remainingMinutes: 0,
+          remainingSeconds: 0
+        }
     }
 
     logout() {
         localStorage.removeItem("authToken");
         window.location = "/";
     }
+
+    updateTime() {
+        var today = new Date();
+        var donationDate = new Date(2018,11,24,0,0);
+    /*
+        // get total seconds between the times
+        var delta = Math.abs(donationDate - today) / 1000;
+    
+        // calculate (and subtract) whole days
+        var days = Math.floor(delta / 86400);
+        delta -= days * 86400;
+    
+        // calculate (and subtract) whole hours
+        var hours = Math.floor(delta / 3600) % 24;
+        delta -= hours * 3600;
+    
+        // calculate (and subtract) whole minutes
+        var minutes = Math.floor(delta / 60) % 60;
+        delta -= minutes * 60;
+        
+        var seconds = Math.floor(delta / 60) % 60;
+        console.log(seconds);
+        */
+       var distance = donationDate - today;
+
+  // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        this.setState({
+          remainingDays: days,
+          remainingHours: hours,
+          remainingMinutes: minutes,
+          remainingSeconds: seconds
+        })
+    }
+    componentDidMount = () => {
+        var that = this
+        setInterval( () => {
+            that.updateTime()
+        },1000)
+        
+      }
 
     render() {
         return (
@@ -59,19 +109,19 @@ class ProfilePage extends React.Component {
 
                             <ul>
                                 <li>
-                                    <span id="days">1</span>
+                                    <span id="days">{this.state.remainingDays}</span>
                                     Zile
                                 </li>
                                 <li>
-                                    <span id="hours">12</span>
+                                    <span id="hours">{this.state.remainingHours}</span>
                                     Ore
                                 </li>
                                 <li>
-                                    <span id="minutes">36</span>
+                                    <span id="minutes">{this.state.remainingMinutes}</span>
                                     Minute
                                 </li>
                                 <li>
-                                    <span id="seconds">10</span>
+                                    <span id="seconds">{this.state.remainingSeconds}</span>
                                     Secunde
                                 </li>
                             </ul>
