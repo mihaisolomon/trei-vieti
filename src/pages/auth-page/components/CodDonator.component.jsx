@@ -37,11 +37,6 @@ class Login extends React.Component {
                                 </span>
                             </label>
 
-                            <label>
-                                <input type="password" placeholder="Parola" />
-                                <span className="error" />
-                            </label>
-
                             <button type="submit">Înregistrare</button>
                         </form>
                     </div>
