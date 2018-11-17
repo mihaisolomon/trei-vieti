@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MaterialIcon from 'material-icons-react';
-import './styles.css'
+import './styles.scss'
 import { Colors } from '../../constants/Colors'
 import Notification from './Notification.component'
 import { PulseLoader } from 'react-spinners'
@@ -75,9 +75,9 @@ class NotificationsView extends Component {
   render() {
     const { notifications } = this.state
     return (
-      <div id="notificationsContainer" className="container">
-          <div className="header">
-            <div className="title">
+      <div id="notificationsContainer">
+          <div className="overlay-header">
+            <div className="overlay-title">
               <h3>Notificari</h3>
             </div>
             <MaterialIcon

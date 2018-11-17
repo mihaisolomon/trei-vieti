@@ -10,12 +10,14 @@ import { loginUserSuccess } from './redux/user/user.actions';
 import AuthService from './services/Auth.service';
 
 import './App.scss';
+import NotificationsView from './components/NotificationsView/NotificationsView.component'
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOffline: !navigator.onLine
+            isOffline: !navigator.onLine,
+            showNotifications: false
         };
 
         window.addEventListener('online', () => {
@@ -36,19 +38,29 @@ class App extends React.Component {
             AuthService.ping().then(user => store.dispatch(loginUserSuccess(user)));
         }
     }
-
+    toggleShowNotifications() {
+        this.setState({
+            showNotifications: !this.state.showNotifications
+        })
+    }
     render() {
         return (
             <BrowserRouter>
                 <Provider store={store}>
                     <div className="App">
                         <div className="container">
-                            <Header />
+                            <Header 
+                                isLogged={store.getState().user}
+                                toggleShowNotifications={()=> this.toggleShowNotifications() }/>
                             <Switch>
                                 <Route path="/" component={AuthPage} />
                                 <Route exact path="/profile" component={ProfilePage} />
                             </Switch>
                         </div>
+                        {this.state.showNotifications &&
+                            <NotificationsView 
+                                onClose={() => this.toggleShowNotifications()}/>
+                        }
                     </div>
                 </Provider>
             </BrowserRouter>
