@@ -1,11 +1,16 @@
 
 .auth-box{
 	display: inline-block;
-	width: calc(100% - 50px);
+	width: calc(100% - 100px);
 	text-align: center;
 	background: #fff;
 	max-width: 460px;
 	padding: 50px;
+
+	@media only screen and (max-width: 460px) {
+		width: calc(100% - 50px);
+		padding: 25px;
+	}
 
 
 	-webkit-box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
@@ -20,6 +25,10 @@
 
 		width: 100%;
 		margin: 0;
+
+		@media only screen and (max-width: 570px) {
+			font-size: 2em;
+		}
 	}
 
 	> p{
@@ -27,13 +36,21 @@
 		font-size: 21px;
 		max-width: 500px;
 		padding: 0 25px;
+
+		@media only screen and (max-width: 570px) {
+			font-size: 16px;
+		}
 	}
 
 	form{
 		display: inline-block;
-		margin-top: 50px;
 		max-width: 420px;
+		margin-top: 50px;
 		width: 100%;
+
+		@media only screen and (max-width: 570px) {
+			margin-top: 25px;
+		}
 
 		label{
 			display: inline-block;
@@ -52,6 +69,10 @@
 				border-bottom: 1px solid #ddd;
 			}
 
+			span.error{
+				display: none;
+			}
+
 			&.has-error{
 				input, select{
 					border-color: red;
@@ -64,21 +85,44 @@
 					width: 100%;
 					color: red;
 
-					&:before{
-						font-family: Material Icons;
-						text-decoration: inherit;
-						font-weight: 400;
-						font-style: normal;
-						content: "info";
-						
+					i{
 						display: inline-block;
-						position: absolute;
 						text-align: center;
+						position: relative;
+						margin-right: 5px;
 						font-size: 16px;
-						left: 0;
-						top: -1px;
+						color: inherit;
+						top: 2px;
 					}
 				}
+			}
+
+			&.checkbox{
+				width: auto;
+
+				input{
+					margin-right: 10px;
+					position: relative;
+					width: auto;
+					float: left;
+					top: 3px;
+				}
+
+				p{
+					width: auto;
+					float: left;
+					margin: 0;
+				}
+			}
+		}
+
+		a{
+			text-decoration: none;
+			float: right;
+			color: #000;
+
+			&:hover{
+				text-decoration: underline;
 			}
 		}
 
@@ -102,6 +146,20 @@
 			&:hover{
 				background: darken(#F5333F, 10%);
 			}
+		}
+	}
+
+	.success-message{
+		i{
+			background: rgba(0,0,0, 0.02);
+			font-size: 75px;
+			margin: 50px 0;
+			padding: 25px;
+			color: red;
+
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radus: 50%;
 		}
 	}
 }
