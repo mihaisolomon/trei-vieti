@@ -1,3 +1,3 @@
 export default {
-    ENDPOINT: '/api',
+    ENDPOINT: 'http://4ea86bbb.ngrok.io/api',
 }

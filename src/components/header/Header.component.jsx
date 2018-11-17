@@ -11,7 +11,7 @@ class Header extends React.Component {
                     <MaterialIcon icon="arrow_back_ios" />
                 </a>
                 <a href="#" className="logo">
-                    <img src="./assets/images/logo.png" className="App-logo" alt="logo" />
+                    <img src="/assets/images/logo.png" className="App-logo" alt="logo" />
                 </a>
                 <a href="#" className="notifications">
                     <MaterialIcon icon="notifications_none" />

@@ -3,53 +3,61 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 import ForgotPass from './ForgotPass.component';
 
 class Login extends React.Component {
-	constructor(props){
-		super(props);
+    constructor(props) {
+        super(props);
 
-		this.state = {
-			showForgotPass: false,
-		};
-	}
+        this.state = {
+            showForgotPass: false
+        };
+    }
 
-	toggle(){
-		this.setState({
-			showForgotPass: !this.state.showForgotPass,
-		});
-	}
+    toggle() {
+        this.setState({
+            showForgotPass: !this.state.showForgotPass
+        });
+    }
+
+    login(event) {
+        event.preventDefault();
+    }
 
     render() {
         return (
-        	<React.Fragment>
-        		{ !this.state.showForgotPass && 
-		            <div className="auth-box">
-		                <h2>Autentificare</h2>
-		                <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
+            <React.Fragment>
+                {!this.state.showForgotPass && (
+                    <div className="auth-box">
+                        <h2>Autentificare</h2>
+                        <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 
-		                <form action="">
-		                    <label className="has-error">
-		                        <input type="text" placeholder="Adresa de email" />
-		                        <span className="error"><MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.</span>
-		                    </label>
+                        <form onSubmit={this.login}>
+                            <label className="has-error">
+                                <input type="text" placeholder="Adresa de email" />
+                                <span className="error">
+                                    <MaterialIcon icon="error_outline" /> Acest câmp este obligatoriu.
+                                </span>
+                            </label>
 
-		                    <label>
-		                        <input type="password" placeholder="Parola" />
-		                        <span className="error"></span>
-		                    </label>
+                            <label>
+                                <input type="password" placeholder="Parola" />
+                                <span className="error" />
+                            </label>
 
-		                    <label className="checkbox">
-		                        <input type="checkbox" placeholder="Parola" />
-		                        <p>Păstrează-ma logat</p>
-		                    </label>
+                            <label className="checkbox">
+                                <input type="checkbox" placeholder="Parola" />
+                                <p>Păstrează-ma logat</p>
+                            </label>
 
-		                    <button type="button" onClick={ () => this.toggle() } >Ai uitat parola?</button>
-		                    <button type="submit">Login</button>
-		                </form>
-		            </div>
-	        	}
+                            <button type="button" onClick={() => this.toggle()}>
+                                Ai uitat parola?
+                            </button>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                )}
 
-	            {this.state.showForgotPass && <ForgotPass onBack={ () => this.toggle() } />}
-            </ React.Fragment>
-    	);
+                {this.state.showForgotPass && <ForgotPass onBack={() => this.toggle()} />}
+            </React.Fragment>
+        );
     }
 }
 
