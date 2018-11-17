@@ -30,6 +30,7 @@ class App extends React.Component {
         return (
             <div className="App">
                 <div className="container">
+                    <Header />
                     <BrowserRouter>
                         <Switch>
                             <Route exact path="/" component={AuthPage} />

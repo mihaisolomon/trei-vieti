@@ -7,7 +7,6 @@ class ProfilePage extends React.Component {
     render() {
         return (
             <div className="user-container">
-                <Header />
                 <section className="user-section-wrapper">
                     <div className="user-section">
                         <div className="rectangle-wrapper">
