@@ -1,13 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+
+
 .App {
+
+  font-family: 'Poppins', sans-serif;
   text-align: center;
-  background-image: url(/assets/images/bg.png);
-  background-position: top center;
-  background-size: cover;
 
-}
+  &:before{
+    background-image: url(/assets/images/bg.png);
+    background-position: top center;
+    background-size: cover;
+    
+    display: inline-block;
+    position: absolute;
+    height: 350px;
+    width: 100%;
+    z-index: -1;
 
-.App-logo {
+    left: 0;
+    top: 0;
 
+    content: '';
+  }
 }
 
 .App-header {

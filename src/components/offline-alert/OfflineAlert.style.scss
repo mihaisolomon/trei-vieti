@@ -1,0 +1,17 @@
+@import "../../styles//variables";
+
+.offline-alert {
+    color: color(white);
+    background: color(red);
+    padding: .5em;
+    transform: translateY(100%);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    transition: transform .25s ease-out;
+    &.is--visible {
+        transform: translateY(0);
+    }
+}

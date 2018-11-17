@@ -13,18 +13,16 @@
 
 	a.logo{
 		display: inline-block;
+		width: 50%;
 
 		img{
 			display: inline-block;
+			width: 100%;
 			float: left;
 		}
 
 		@media only screen and (max-width: 780px) {
 			max-width: 65%;
-
-			img{
-				width: 100%
-			}
 		}
 	}
 
