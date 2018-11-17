@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/header/Header.component';
+import BloodRectangle from './components/BloodRectangle/BloodRectangle.component'
 import './App.css';
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header appName = {"Trei Vieti #2"}/>
+        <Header appName = {"Trei Vieti"}/>
+        <BloodRectangle bloodType="A" percentage="22" />
+        <BloodRectangle bloodType="B" percentage="55" />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
