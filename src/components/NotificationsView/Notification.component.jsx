@@ -3,21 +3,33 @@ import MaterialIcon from 'material-icons-react';
 import { Colors } from '../../constants/Colors'
 
 class Notification extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            read: props.notification.read
+        }
+    }
+    toggleRead() {
+        this.setState({
+            read: !this.state.read
+        })
+    }
   render() {
     const { notification } = this.props
-    
+    const { read } = this.state
     return (
       <div className="notificationContainer">
-        <div className="notificationIcon" onClick={() => this.props.toggleRead()}>
-            {notification.read &&
+        <div className="notificationIcon" onClick={() => this.toggleRead()}>
+            {read &&
                 <MaterialIcon
                     color={Colors.secondary}
                     icon="notifications_none"/>
             }
-            {!notification.read &&
+            {!read &&
                 <MaterialIcon 
                 color={Colors.yellow}
-                icon="notifications"/>
+                icon="notifications" />
             }
         </div>
         <div className="notificationBody">
@@ -33,8 +45,6 @@ class Notification extends Component {
   }
 }
 Notification.defaultProps = {
-    toggleRead: function() {
-        console.log("toggleRead")
-    }
+    onDismiss: function() {}
 }
 export default Notification

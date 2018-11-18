@@ -2,12 +2,11 @@
 
 .blood-rectangle{
 	position:relative;
-    top: -50px;
 	display:inline-block;
 	margin:10px;
 	background-color: white;
 	border-radius:5%;
-	width:80px;
+	width:100px;
 	height:100px;
 	-webkit-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
 	-moz-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
@@ -15,8 +14,10 @@
 	h1 {
 		font-size:2em;
 		margin:10px 0;
+		color: #4f4f6f;
 	}
 	p {
 		font-size: 1em;
+		color: #4f4f6f;
 	}
 }

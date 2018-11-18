@@ -9,9 +9,137 @@ body {
 }
 
 .container{
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
     max-width: 780px;
     text-align: center;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
+    z-index: 1;
+}
+.bg-white {
+  background-color: #fff; 
+}
+section {
+  padding-bottom: 40px;
+}
+label{
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+  float: left;
+
+  input{
+    display: inline-block;
+    background: none;
+    padding: 15px 0;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    width: 100%;
+
+    border-bottom: 1px solid #ddd;
+  }
+
+  span.error{
+    display: none;
+  }
+
+  &.has-error{
+    input, select{
+      border-color: red;
+    }
+
+    span.error{
+      display: inline-block;
+      text-align: left;
+      margin-top: 5px;
+      width: 100%;
+      color: red;
+
+      i{
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin-right: 5px;
+        font-size: 16px;
+        color: inherit;
+        top: 2px;
+      }
+    }
+  }
+
+  &.checkbox{
+    width: auto;
+
+    input{
+      margin-right: 10px;
+      position: relative;
+      width: auto;
+      float: left;
+      top: 3px;
+    }
+
+    p{
+      width: auto;
+      float: left;
+      margin: 0;
+    }
+  }
+}
+
+button{
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  float: right;
+  color: #000;
+
+  &:hover{
+    // text-decoration: underline;
+  }
+
+  &.go-back{
+    display: inline-block;
+    text-align: center;
+    margin-top: 15px;
+    float: left;
+
+    &:hover{
+      text-decoration: none;
+    }
+
+    i{
+      position: relative;
+      font-size: 16px;
+      top: 2px;
+    }
+  }
+
+}
+
+button[type="submit"]{
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.5s ease;
+  display: inline-block;
+  background: #F5333F;
+  cursor: pointer;
+  outline: none;
+  padding: 15px;
+  border: none;
+  width: 100%;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 25px;
+  font-size: 21px;
+  color: #fff;
+
+  &:hover{
+    background: darken(#F5333F, 10%);
+  }
 }

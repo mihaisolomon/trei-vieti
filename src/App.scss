@@ -1,21 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 
-
+html,body {
+  height: 100%;
+  background-color: #f4f4f4; 
+} 
 .App {
 
   font-family: 'Poppins', sans-serif;
   text-align: center;
 
   &:before{
-    background-image: url(/assets/images/bg.png);
+    /*background-image: url(/assets/images/bg.png);*/
     background-position: top center;
     background-size: cover;
     
     display: inline-block;
     position: absolute;
-    height: 400px;
+    height: 350px;
     width: 100%;
-    z-index: -1;
 
     left: 0;
     top: 0;
@@ -52,4 +54,7 @@
 
 button {
   cursor: pointer;
+  border: 0;
+  outline: none;
+  border-radius: 5pt;
 }

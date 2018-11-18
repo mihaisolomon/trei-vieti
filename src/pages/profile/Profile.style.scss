@@ -1,16 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
-
-
 .rectangle-wrapper, .user-section, .time-section {
 	text-align:center;
-
 }
 .user-container{
 	h2{
 		font-size: 35px;
 		color: #fff;
 		position: relative;
-		top: -35px;
 	}
 }
 .full-profile{
@@ -19,6 +14,7 @@
 	background: #F5333F;
 	margin-top: 30px;
 	padding: 25px;
+	border-radius: 5pt;
 
 	h3{
 		display: inline-block;
@@ -35,7 +31,7 @@
 	padding: 25px;
 	border:1px solid #F5333F;
 	color: #F5333F;
-	width:calc(100% - 50px);
+	width:calc(100% - 100px);
 
 	h2, h3{
 		display: inline-block;
@@ -62,80 +58,34 @@
 }
 .user p {
 	margin-bottom:50px;
+	color: #ccc;
+	font-size: 16pt;
+	span {
+		color:#4f4f6f;
+	}
 }
 
 .user-section {
 	padding-bottom:30px;
-	background: #fff;
 	max-width:800px;
 	margin:0 auto;
 }
 
 .user-section-wrapper {
-	-webkit-box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
-	-moz-box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
-	box-shadow: 0px 10px 37px -22px rgba(0,0,0,0.53);
-
 	display: inline-block;
+	padding-top: 40px;
 	width: 100%;	
 }
-.time-section {
-	background-color:white;
-		padding:30px;
-			max-width:800px;
-			margin:0 auto;
 
-}
 .user-stats {
 	display: inline-block;
 	width:33.33%;
+	font-size: 16pt;
 	b{
-		font-size: 25px;
+		color: #4f4f6f;
 	}
 	p {
-		color:grey;
+		color:#ccc;
 		margin:0;
 	}
-}
-.time {
-	color: #F5333F;
-	padding-bottom:30px;
-
-	ul{
-		li{
-			span{
-				color: #000;
-				font-weight: bold;
-			}
-		}
-	}
-
-	h1 {
-		font-size: 4em; 
-		margin:0;
-		color:grey;
-	}
-	p {
-		color: #000;
-		margin:0;
-	}
-	vertical-align:center;
-}
-.time-nrs {
-			display: inline-block;
-
-}
-
-
-li {
-  display: inline-block;
-  font-size: 1.5em;
-  list-style-type: none;
-  padding: 1em;
-  text-transform: uppercase;
-}
-
-li span {
-  display: block;
-  font-size: 4.5rem;
 }

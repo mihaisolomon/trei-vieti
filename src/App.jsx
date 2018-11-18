@@ -3,7 +3,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import AuthPage from './pages/auth-page/Auth.page';
 import ProfilePage from './pages/profile/Profile.page';
-import Header from './components/header/Header.component';
+import FullProfilePage from './pages/full-profile/FullProfile.page'
+import NavBar from './components/NavBar/NavBar.component';
 
 import store from './redux/store';
 import { loginUserSuccess } from './redux/user/user.actions';
@@ -55,14 +56,15 @@ class App extends React.Component {
                 <Provider store={store}>
                     <div className="App">
                         <div className="container">
-                            <Header 
+                            <NavBar 
                                 isLogged={store.getState().user}
                                 toggleShowNotifications={()=> this.toggleShowNotifications() }/>
-                            <Switch>
-                                <Route path="/profile" component={ProfilePage} />
-                                <Route path="/" component={AuthPage} />
-                            </Switch>
                         </div>
+                        <Switch>
+                            <Route path="/full-profile" component={FullProfilePage} />
+                            <Route path="/profile" component={ProfilePage} />
+                            <Route path="/" component={AuthPage} />
+                        </Switch>
                         {this.state.showNotifications &&
                             <NotificationsView 
                                 onClose={() => this.toggleShowNotifications()}/>

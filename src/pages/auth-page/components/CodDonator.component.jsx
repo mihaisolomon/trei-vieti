@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import ForgotPass from './ForgotPass.component';
 import AuthService from '../../../services/Auth.service';
 import { connect } from 'react-redux';
@@ -42,7 +42,7 @@ class CodDonator extends React.Component {
         return (
             <React.Fragment>
                 {!this.state.showForgotPass && (
-                    <div className="auth-box">
+                    <div className="auth-box" style={{ top: '200px' }}>
                         <h2>Activare cont</h2>
                         <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 

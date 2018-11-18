@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-import Header from './components/header/Header.component';
+import NavBar from './components/NavBar/NavBar.component';
 import BloodRectangle from './components/BloodRectangle/BloodRectangle.component'
 import Auth from './components/auth/Auth.component';
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="container">
-          <Header />
+          <NavBar />
           <Auth />
         </div>
       </div>

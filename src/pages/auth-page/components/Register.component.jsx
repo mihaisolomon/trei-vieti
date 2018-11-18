@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import { connect } from 'react-redux';
 
 import AuthService from '../../../services/Auth.service';
@@ -27,14 +27,14 @@ class Register extends React.Component {
                 this.props.dispatch(loginUserSuccess(user));
                 this.props.history.push('/profile');
             })
-            .catch(err => {
-                alert('Aoleu! Smallpox everywhere!');
-            });
+            .catch(() => {
+                    alert('Aoleu! Smallpox everywhere!');
+                });
     }
 
     render() {
         return (
-            <div className="auth-box">
+            <div className="auth-box" style={{ top: '200px' }}>
                 <h2>Creare cont</h2>
                 <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 

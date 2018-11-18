@@ -1,5 +1,5 @@
 import React from 'react';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ForgotPass from './ForgotPass.component';
@@ -50,9 +50,9 @@ class Login extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <React.Fragment className="container">
                 {!this.state.showForgotPass && (
-                    <div className="auth-box">
+                    <div className="auth-box" style={{ top: '200px' }}>
                         <h2>Autentificare</h2>
                         <p>În câteva minute poți salva lumea, în ochii celor care au nevoie de urgență de sânge.</p>
 

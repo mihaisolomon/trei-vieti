@@ -1,10 +1,10 @@
 import React from 'react';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
+import MaterialIcon from 'material-icons-react';
 
 class ForgotPass extends React.Component {
     render() {
         return (
-            <div className="auth-box">
+            <div className="auth-box" style={{ top: '200px' }}>
                 <h2>Recuperare parola</h2>
                 <p>Completează adresa de e-mail cu care te-ai înregistrat și îți vom trimite un e-mail cu noua parola.</p>
 

@@ -58,13 +58,6 @@ class NotificationsView extends Component {
     }
     return el.getBoundingClientRect().bottom <= window.innerHeight
   }
-  toggleRead(index) {
-    let newNotif = this.state.notifications.slice(0)
-    newNotif[index]['read']  = !newNotif[index]['read']
-    this.setState({
-      notifications: newNotif
-    })
-  }
   dismissNotification(index) {
     let newNotif = this.state.notifications.slice(0)
     newNotif.splice(index,1)
@@ -76,6 +69,7 @@ class NotificationsView extends Component {
     const { notifications } = this.state
     return (
       <div id="notificationsContainer">
+        <div className="container">
           <div className="overlay-header">
             <div className="overlay-title">
               <h3>Notificari</h3>
@@ -88,9 +82,8 @@ class NotificationsView extends Component {
           <div className="body">
             {notifications.length > 0 && notifications.map((notification, index) =>
                 <Notification
-                  key={index}
+                  key={notification.id}
                   notification={notification}
-                  toggleRead={() => this.toggleRead(index) }
                   onDismiss={() => this.dismissNotification(index)} />
             )}
             {notifications.length === 0 && !this.state.loading &&
@@ -104,6 +97,7 @@ class NotificationsView extends Component {
                 loading={this.state.loading}
               />
           </div>
+        </div>
       </div>
     )
   }

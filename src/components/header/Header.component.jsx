@@ -1,35 +1,16 @@
-import React from 'react';
-import MaterialIcon, {colorPalette} from 'material-icons-react';
-
-import './Header.style.scss';
-
-class Header extends React.Component {
-    render() {
-        return (
-            <div className="header">
-                {this.props.isLogged &&
-                    <a href="#" className="go_back">
-                        <MaterialIcon icon="arrow_back_ios" />
-                    </a>
-                }
-                <a href="#" className="logo">
-                    <img src="./assets/images/logo.png" className="App-logo" alt="logo" />
-                </a>
-                {this.props.isLogged &&
-                    <a href="#" className="notifications" onClick={() => this.props.toggleShowNotifications()}>
-                        <MaterialIcon icon="notifications_none" />
-                    </a>
-                }
-               
-            </div>
-        );
-    }
+import React, { Component } from 'react'
+import './Header.style.scss'
+class Header extends Component {
+  render() {
+    return (
+      <div id="header" style={{ height: this.props.height }}>
+        {this.props.renderContent}
+      </div>
+    )
+  }
 }
 Header.defaultProps = {
-    isLogged: false,
-    toggleShowNotifications: function() {
-        console.log("toggle notif");
-        
-    }
+    renderContent: '',
+    height: 150
 }
-export default Header;
+export default Header

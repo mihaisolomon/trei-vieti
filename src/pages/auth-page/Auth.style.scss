@@ -1,11 +1,13 @@
 
 .auth-box{
+	position: relative;
 	display: inline-block;
 	width: calc(100% - 100px);
 	text-align: center;
 	background: #fff;
 	max-width: 460px;
 	padding: 50px;
+	border-radius: 5px;
 
 	@media only screen and (max-width: 460px) {
 		width: calc(100% - 50px);
