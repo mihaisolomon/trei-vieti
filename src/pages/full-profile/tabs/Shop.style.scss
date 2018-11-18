@@ -1,0 +1,62 @@
+#shop {
+    text-align: center;
+    h3 {
+        font-size: 40pt;
+        margin-bottom: 0; 
+    }
+    p {
+        color: #ccc;
+        font-size: 16pt;
+        margin-top: 0;
+    }
+    .vouchers-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .voucher {
+        flex: 1 0 30%; /* explanation below */
+        margin: 10px;
+        position: relative;
+        max-width: 30%;
+        @media only screen and (max-width: 682px) {
+            max-width: 50%;
+        }
+        span {
+            color: #F5333F;
+        }
+        p {
+            color: #4f4f6f;
+        }
+        .voucher-image {
+            position: relative;
+            -webkit-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
+            -moz-box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
+            box-shadow: -2px 15px 27px -5px rgba(0,0,0,0.22);
+            background: url('/assets/icons/icon-192x192.png') #F5333F;
+            background-size: 75%;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 5px;
+
+            img {
+                position: absolute;
+                top:0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .voucher-image:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+        
+    }
+    
+      
+}

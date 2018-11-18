@@ -24,11 +24,9 @@ body {
 section {
   padding-bottom: 40px;
 }
-label{
+label {
   display: inline-block;
   margin-bottom: 15px;
-  width: 100%;
-  float: left;
 
   input{
     display: inline-block;
@@ -48,7 +46,7 @@ label{
 
   &.has-error{
     input, select{
-      border-color: red;
+      border-color: #F5333F;
     }
 
     span.error{
@@ -56,7 +54,7 @@ label{
       text-align: left;
       margin-top: 5px;
       width: 100%;
-      color: red;
+      color: #F5333F;
 
       i{
         display: inline-block;
@@ -96,7 +94,6 @@ button{
   cursor: pointer;
   outline: none;
   border: none;
-  float: right;
   color: #000;
 
   &:hover{
@@ -142,4 +139,168 @@ button[type="submit"]{
   &:hover{
     background: darken(#F5333F, 10%);
   }
+}
+
+/* Customize the label (the container) */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #F5333F;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.mdl-group {
+  margin-top:20px;
+  position:relative; 
+  margin-bottom:25px; 
+}
+@media (max-width: 768px) {
+  .mdl-group {
+    width: 100%;
+    text-align: center;
+    margin: 45px auto 0px auto;
+  }
+}
+.modal .mdl-group input, .modal .mdl-group select {
+  color: #222;
+}
+.mdl-group input, .mdl-group select {
+  color: #4f4f6f;
+  font-family: 'Poppins', sans-serif;
+  background: inherit;
+  font-size:18px;
+  padding:10px 0px 10px 0px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #999999;
+}
+.mdl-group select {
+  width: inherit;
+}
+.mdl-group input:focus     { outline:none; }
+.input-icon-group textarea:focus     { outline:none; }
+.mdl-group label {
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  color:#4f4f6f; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  left:0px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+.mdl-group input:not([type="radio"]):focus ~ label,
+.mdl-group input:not([type="radio"]):valid ~ label,
+.mdl-group input:not([type="radio"]):disabled ~ label,
+.mdl-group select:valid ~ label {
+  top: -20px;
+  font-size:18px;
+  color:#4f4f6f;
+}
+
+/* BOTTOM BARS ================================= */
+.mdl-group .bar  { 
+  position:relative; 
+  display:block; 
+  width:100%; 
+}
+.mdl-group textarea + .bar  { 
+  position:relative; 
+  display:block; 
+  width:100%; 
+}
+.mdl-group .bar:before, .mdl-group .bar:after   {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:0px; 
+  position:absolute;
+  background:#F5333F; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.mdl-group .bar:before,
+.mdl-group .bar:after {
+  background-color: #F5333F;
+}
+.mdl-group .bar:before {
+  left:50%;
+}
+.mdl-group .bar:after {
+  right:50%; 
+}
+
+/* active state */
+.mdl-group input:not([type="radio"]):focus ~ .bar:before,
+.mdl-group  input:not([type="radio"]):focus ~ .bar:after {
+  width:50%;
 }

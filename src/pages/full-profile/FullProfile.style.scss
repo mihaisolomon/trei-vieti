@@ -229,3 +229,29 @@
 .tab-bar-title {
   font-size: 16pt;
 }
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+
+  h3 {
+    color: #4f4f6f;
+  }
+}
+.referral-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
+  width: 100%;
+  background-color: #F5333F;
+  text-align: center;
+  h4 {
+    color: #4f4f6f;
+  }
+  p {
+    cursor: pointer;
+    color: #fff;
+  }
+}
